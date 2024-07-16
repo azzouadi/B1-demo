@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #aeaeb5;
+  margin: 0;
+  padding: 0;
+}
+ 
+.pharmacie {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+.flex-col-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+.filter-wrapper {
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  border-radius: 5px;
+}
+ 
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+ 
+.textfield-label {
+  margin-bottom: 10px;
+}
+ 
+.textfield-label label {
+  display: block;
+  margin-bottom: 5px;
+}
+ 
+.textfield-label input,
+.textfield-label select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+ 
+.button-outlined {
+  background: none;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+ 
+.button-outlined svg {
+  margin-right: 5px;
+}
+ 
+.text-error {
+  color: red;
+  margin-bottom: 10px;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+ 
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+ 
+th {
+  background: #f4f4f4;
+}
+ 
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+ 
+.button-detail {
+  background: #d5d7da;
+  color: #cc2a2a;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+ 
+.button-detail:hover {
+  background: #0056b3;
+}
