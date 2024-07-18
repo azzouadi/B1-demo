@@ -44,7 +44,7 @@ Je vais maintenant expliquer comment utiliser Putty pour accéder à la VM que n
 ## Mettre à jour les Paquets
 
 Une fois connecté, mettez à jour les paquets de votre VM :
-```bash
+```
 sudo apt update
 sudo apt upgrade -y
 ```
@@ -53,12 +53,12 @@ sudo apt upgrade -y
 Installez le serveur web Apache2 :
 
 ```
-bash sudo apt install apache2 -y
+ sudo apt install apache2 -y
 ```
 
 Démarrez Apache2 et assurez-vous qu'il se lance au démarrage :
 ```
-bash sudo systemctl start apache2 sudo systemctl enable apache2
+ sudo systemctl start apache2 sudo systemctl enable apache2
 ```
 Ensuite pour verifier si tout fonctionne correctremnt on mets l'adresse ip de la VM dans un navigateur internet normalmenet on devrait avoir une page APACHE
 
@@ -67,12 +67,12 @@ Ensuite pour verifier si tout fonctionne correctremnt on mets l'adresse ip de la
 
 Installer PHP et les Modules Nécessaires :
 ```
-bash sudo apt install php libapache2-mod-php php-mysql -y
+ sudo apt install php libapache2-mod-php php-mysql -y
 ```
 
 Redémarrez Apache2 pour charger les modules PHP :
 ```
-bash sudo systemctl restart apache2
+ sudo systemctl restart apache2
 ```
 Créez un fichier info.php dans le répertoire /var/www/html :
 ```
@@ -83,13 +83,13 @@ Pour verifier si tout fonctionne bien on accede a : <b>http://IP-DE-LA-VM/info.p
 # Installer MySQL
 
 Installez le serveur MySQL:
-```
-bash sudo apt install mysql-server -y
+``` 
+sudo apt install mysql-server -y
 ```
 
 Exécutez le script de sécurisation de MySQL
 ```
-bash sudo mysql_secure_installation
+ sudo mysql_secure_installation
 ```
 - Suivez les instructions à l'écran pour configurer le mot de passe root et sécuriser l'installation.
 
@@ -113,6 +113,44 @@ Ensuite on redemarre Apache:
 ```
 sudo systemctl reload apache2
 ```
+Ensuite on fais une copie de la configuration par defaut pour le domaine qui est cree pour mon cas c'est azzouz.conf
+
+Quand c'est cree on va modifier le fichier config et on y accede ici dans ce fichier /etc/apache2/sites-available/your_domain_1.conf ensuite on l'ajuste par exemple pour mon cas c'est : 
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName azzouz
+    ServerAlias www.azzouz
+    DocumentRoot /var/www/azzouz/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+Ensuite on active le fichier de config
+ ```
+ sudo a2ensite azzouz.conf
+ ```
+ On desactive la config par defaut 
+ ```
+ sudo a2dissite 000-default.conf
+ ```
+
+ On verifie la config
+ ```
+sudo apache2ctl configtest
+```
+
+Et pour finir on redemarre Apache
+```
+sudo systemctl restart apache2
+```
+
+Et la donc si tout a ete bon l'application web devrait etre fonctionelle 
+
+
+
+
 
 
 
