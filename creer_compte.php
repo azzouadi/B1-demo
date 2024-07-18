@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <?php
-session_start();
 include_once './test.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

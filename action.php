@@ -1,5 +1,5 @@
 <?php
-include 'test.php'; // Assurez-vous que ce fichier se connecte correctement à votre base de données
+include 'test.php'; 
 include_once './test.php';
 
 try {
