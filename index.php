@@ -10,19 +10,19 @@
 <body>
     <div class="container">
         <h1>AZZSAF</h1>
-          
+         
         <p>AZZSAF vous aide à vous connecter<br> Ce site est fait pour gérer le stock.</p>
     </div>
-
+ 
     <header>
         <div class="box">
-            <form action="action.php" method="post">
-                <input type="email" name="nom" id="nom" placeholder="Nom d'utilisateur" required><br>
-                <input type="text" name="mot de passe oublie" placeholder="mot de passe" required/><br>
+            <form action="connect-user.php" method="post">
+                <input type="email" id="email" name="email" id="nom" placeholder="Nom d'utilisateur" required><br>
+                <input type="text" id="password" name="password" placeholder="mot de passe" required/><br>
                 <input type="submit" value="Connexion">
             </form>
         </div>
-
+ 
         <nav>
             <ul>
             <li><a href="mdp_oublie.php">Changer de mot de passe</a></li>
